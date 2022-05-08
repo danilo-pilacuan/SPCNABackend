@@ -23,6 +23,8 @@ Escoger la versión v14.5.0
 6. El servicio Backend se iniciará en
 [http://localhost:3000](http://localhost:3000)
 
+7. Verificar que el servicio esté corriendo haciendo una solicitud get a la dirección: [http://localhost:5000/API/users/getAll](http://localhost:5000/API/users/getAll)
+
 
 
 
