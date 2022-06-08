@@ -3,6 +3,19 @@ const User = require("../models/users");
 module.exports = class controllerCourses {
     //fetch all courses
     static async getCourses(req,res){
+        /* 	#swagger.tags = ['User']
+        #swagger.description = 'Endpoint to sign in a specific user' */
+
+    /*	#swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'User information.',
+            required: true,
+            schema: { $ref: "#/definitions/AddUser" }
+    } */
+
+    /* #swagger.security = [{
+            "apiKeyAuth": []
+    }] */
         try {
             const courses = await Course.find().populate('users');
             res.status(200).json(courses);

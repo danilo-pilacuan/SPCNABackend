@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require('cookie-parser')
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger_output.json')
+
+
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -31,6 +35,9 @@ mongoose.connect(process.env.DB_URI, {
 .catch((err) => console.log(err));
 
 //routes prefix
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
+
 app.use("/api/users",require("./routes/routesUsers"));
 app.use("/api/courses",require("./routes/routesCourses"));
 app.use("/api/lessons",require("./routes/routesLessons"));
